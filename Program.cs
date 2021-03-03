@@ -24,10 +24,10 @@ namespace async_examples
             Console.WriteLine("Numbers:  " + numbers);
             Console.WriteLine("Words: " + words);
 
+            Console.WriteLine("--------------------------------------------------------------");
+
             var stopwatch2 = new Stopwatch();
             stopwatch2.Start();
-
-            Console.WriteLine("--------------------------------------------------------------");
 
             var numbersTwo = SumArtificialNumbersAsync();
             var wordsTwo = ConcatenateArtificialStringsAsync();
@@ -50,6 +50,8 @@ namespace async_examples
             foreach (var counter in Enumerable.Range(0, 100))
             {
                 sum += counter;
+
+                // ! artificial delay
                 await Task.Delay(150);
             }
 
@@ -62,6 +64,8 @@ namespace async_examples
             foreach (var counter in Enumerable.Range(65, 26))
             {
                 word = string.Concat(word, (char) counter);
+
+                // ! artificial delay
                 await Task.Delay(150);
             }
 
